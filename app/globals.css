@@ -1,0 +1,104 @@
+:root{color-scheme:dark;--text:#f5fbff;--panel:#077bc5;--focus:#ffe9a0;font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#043457;color:var(--text)}
+button{font:inherit;cursor:pointer;color:inherit}
+button:disabled{opacity:.5;cursor:wait}
+button:focus-visible{outline:3px solid var(--focus);outline-offset:4px}
+.start-screen,.exit-screen{position:relative;min-height:100svh;overflow:hidden;background:linear-gradient(100deg,rgba(0,40,85,.38),rgba(0,45,80,.05)),url('/assets/academy-hall.webp') center/cover}
+.start-title{position:absolute;top:6svh;left:7vw;font:700 clamp(36px,5vw,68px) STKaiti,KaiTi,serif;letter-spacing:.12em;margin:0;text-shadow:0 3px 16px #01487c}
+.start-turtle{position:absolute;right:6vw;bottom:0;width:43vw;height:78svh;object-fit:contain;object-position:bottom;filter:drop-shadow(0 12px 28px #002959)}
+.start-menu{position:absolute;left:23vw;top:53%;transform:translate(-50%,-43%);width:clamp(200px,25vw,360px);display:grid;gap:22px}
+.start-menu button,.glass-button{border:2px solid #74ceff;border-radius:36px;background:linear-gradient(180deg,#6ec7ee,#1686d0 46%,#0060b5);box-shadow:inset 0 10px 20px #c2eeff7a,inset 0 -12px 20px #004b9b85,0 7px 0 #014689b8,0 14px 28px #0022566b;color:white;text-shadow:0 2px 6px #024c92}
+.start-menu button{min-height:clamp(68px,9svh,100px);font:800 clamp(26px,2.5vw,40px) STKaiti,KaiTi,serif;letter-spacing:.15em}
+.start-menu button:hover,.glass-button:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.glass-button{min-height:64px;padding:14px 26px;font-size:18px;line-height:1.5}
+.game-shell{position:relative;height:100svh;min-height:640px;isolation:isolate;background:#06497a}
+.game-shell::before{content:'';position:absolute;inset:0;z-index:-2;background:var(--scene-bg) center/cover;filter:brightness(.76)}
+.game-shell::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#00224673,transparent 42%,#001d446b)}
+.topbar{height:70px;padding:12px 26px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(#00254a9c,transparent)}
+.chapter-label{font-size:19px;font-weight:600}
+.header-actions{display:flex;gap:10px;align-items:center}
+.wallet,.header-actions button{border:1px solid #a2dfff8f;background:#046eaacc;border-radius:22px;padding:9px 16px;font-size:15px;white-space:nowrap}
+.wallet{display:flex;align-items:center;gap:8px}
+.story-stage{position:absolute;inset:70px 0 35px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:28px;padding:32px 0 0}
+.choice-stage{display:flex;flex-direction:column;width:min(38vw,680px);gap:18px;max-height:43%;overflow-y:auto;padding:4px 8px 13px;flex-shrink:0}
+.choice-stage .glass-button{width:100%;flex-shrink:0}
+.dialogue-panel{position:relative;width:74vw;max-width:1380px;height:29svh;min-height:235px;max-height:390px;flex-shrink:0;padding:26px 34px;border:2px solid #77d1ff;border-radius:40px;background:linear-gradient(165deg,#50b5eaf2,#0783d4f5 50%,#0557b4f7);box-shadow:inset 0 12px 24px #dbf6ff66,inset 0 -14px 28px #003b9799,0 8px 0 #013e8da8,0 20px 45px #00205280;display:flex;flex-direction:column}
+.speaker-name{font:700 clamp(20px,2vw,28px) STKaiti,KaiTi,serif;line-height:1.4;margin-bottom:12px;padding-right:12px;flex-shrink:0;text-shadow:0 2px 7px #025998}
+.dialogue-body{min-height:0;overflow:auto;scrollbar-width:thin;padding-right:10px}
+.dialogue{white-space:pre-line;margin:0;font-size:clamp(17px,1.35vw,21px);line-height:1.8}
+.with-portrait{padding-right:clamp(170px,19vw,300px)}
+.portrait-frame{position:absolute;right:22px;top:-36px;width:clamp(125px,16vw,235px);aspect-ratio:1;border:4px solid #d3f5ff;border-radius:50%;overflow:hidden;background:linear-gradient(150deg,#e3f8ff,#55bce9);box-shadow:0 10px 25px #00286766}
+.portrait-frame img{display:block;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.material-list{list-style:none;margin:0;padding:0;font-size:18px;line-height:2}
+.demo-boundary{margin-top:16px;border-top:1px solid #bdeeff66;padding-top:12px;font-size:15px}
+.demo-boundary p{margin:0 0 10px}
+.demo-boundary button,.menu-actions button,.setting-row button{border:1px solid #c3edff80;border-radius:18px;padding:10px 16px;background:#025697a6;margin-right:8px;font-size:16px}
+.game-foot{position:absolute;bottom:9px;left:0;right:0;text-align:center;font-size:13px;color:#dcf4ff}
+.mail-surface{position:absolute;left:50%;top:47%;transform:translate(-50%,-50%);display:grid;justify-items:center;gap:25px;width:min(90%,510px);padding:40px 20px;background:#023c69cc;border:1px solid #c1e8ff70;border-radius:32px;backdrop-filter:blur(8px)}
+.mail-surface h2{font-size:23px;margin:0}
+.offer-letter{position:absolute;top:78px;bottom:40px;left:50%;transform:translateX(-50%);width:min(92vw,760px);padding:30px 40px;overflow:auto;color:#173951;background:#f0faff;border:6px double #4a9ec7;border-radius:12px;box-shadow:0 20px 70px #001c4aaa;color-scheme:light}
+.offer-letter h2{text-align:center;font:700 28px STKaiti,KaiTi,serif;margin:10px 0 24px;letter-spacing:.2em}
+.academy-emblem{display:flex;align-items:center;justify-content:center;gap:9px;color:#12648b;font-size:16px}
+.offer-copy p{font-size:17px;line-height:1.8;margin:0 0 13px}
+.offer-copy p:first-child{font-weight:700}
+.offer-copy p:nth-last-child(-n+2){text-align:right}
+.shell-confirm{display:flex;align-items:center;justify-content:center;gap:8px;margin:22px 0 0 auto;border:2px solid #cf9bcb;border-radius:30px;padding:15px 23px;color:#113e62;background:linear-gradient(120deg,#ffe7ac,#ecc2f1,#afecff);font-weight:600}
+.game-dialog{border:2px solid #9ce1ff;border-radius:30px;background:linear-gradient(150deg,#137db8,#044b88);color:var(--text);width:min(94vw,650px);max-height:85svh;padding:0;box-shadow:0 20px 70px #001c49bb}
+.game-dialog::backdrop{background:#001c4bb3;backdrop-filter:blur(6px)}
+.dialog-inner{position:relative;padding:32px;font-size:17px;line-height:1.8}
+.dialog-inner h2{margin:0 36px 20px 0;font-size:28px}
+.dialog-inner h3{font-size:18px}
+.close-button{position:absolute;right:14px;top:14px;display:grid;place-items:center;width:38px;height:38px;background:transparent;border:0;border-radius:50%}
+.author-note{margin-bottom:25px}
+.menu-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.menu-actions button{margin:0}
+.setting-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ffffff30}
+.setting-row button{display:flex;align-items:center;gap:8px}
+.dialog-inner ol{padding-left:25px;max-height:42svh;overflow:auto}
+.dialog-inner li{padding:8px 4px;border-bottom:1px solid #ffffff30;white-space:pre-line}
+.exit-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:10px}
+.exit-screen h1{font-size:28px}
+.large-text .dialogue,.large-text .offer-copy p{font-size:24px;line-height:1.8}
+.large-text .glass-button{font-size:22px}
+.effects-off *, .effects-off *::before{transition:none!important;animation:none!important}
+@media(max-width:800px){
+ .start-turtle{right:-8vw;width:64vw;opacity:.85}
+ .start-menu{left:28vw;width:38vw}
+ .topbar{padding:10px 12px}
+ .header-actions{gap:6px}
+ .wallet,.header-actions button{padding:8px 10px;font-size:14px}
+ .choice-stage{width:65vw}
+ .dialogue-panel{width:93vw;padding:22px;min-height:270px;height:36svh}
+ .with-portrait{padding-right:148px}
+ .portrait-frame{right:14px;top:-26px;width:120px}
+ .dialogue{font-size:17px;line-height:1.7}
+ .speaker-name{font-size:21px}
+}
+@media(max-width:520px){
+ .start-title{top:7svh}
+ .start-menu{left:43%;top:57%;width:66vw}
+ .start-turtle{right:-15vw;bottom:15svh;width:88vw}
+ .game-shell{min-height:760px}
+ .story-stage{gap:22px;inset:66px 0 32px;padding-top:10px}
+ .choice-stage{width:91vw;gap:14px;max-height:38%}
+ .glass-button{font-size:16px;min-height:56px;padding:12px 20px}
+ .dialogue-panel{height:41svh;min-height:315px;max-height:480px;border-radius:28px;padding:20px}
+ .with-portrait{padding-right:20px}
+ .with-portrait .speaker-name{padding-right:98px;min-height:76px}
+ .portrait-frame{top:8px;right:12px;width:84px;border-width:3px}
+ .dialogue-body{padding-right:3px}
+ .dialogue{font-size:17px}
+ .offer-letter{padding:20px;top:72px;bottom:32px}
+ .offer-copy p{font-size:16px}
+ .offer-letter h2{font-size:24px}
+ .dialog-inner{padding:26px 22px}
+ .chapter-label{font-size:16px}
+}
+@media(max-height:640px) and (min-width:700px){
+ .game-shell{min-height:580px}
+ .choice-stage{gap:10px;max-height:40%}
+ .glass-button{min-height:49px;padding:8px 18px}
+ .dialogue-panel{height:230px;min-height:230px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
