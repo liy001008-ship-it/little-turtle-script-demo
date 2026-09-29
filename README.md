@@ -25,3 +25,9 @@ Node.js >= 22.13，使用已有 pnpm 锁文件安装依赖。`pnpm dev` 启动�
 ## 发布
 
 `.openai/hosting.json` 指向已有试玩网站。发布时必须先推送此次源码，再保存与源码提交一致的构建版本。GitHub 的 `main` 分支同时更新为本版代码；不能用旧版本号重发来代替更新。
+
+### Netlify
+
+`pnpm run build:netlify` 使用相同的 `app/page.tsx`、`app/story.ts` 和样式构建纯静态游戏，输出目录为 `dist-netlify`。`netlify.toml` 已指定构建命令及发布目录；不需要部署 Cloudflare Worker，也不需要服务器函数。Netlify 与原网址的浏览器存档彼此独立。
+
+若使用 Netlify 命令行上传已构建的文件，执行 `netlify deploy --dir=dist-netlify --no-build --prod`，并先确认关联的是目标游戏项目。若连接 GitHub 自动发布，使用本仓库的 `main` 分支及上述配置。
